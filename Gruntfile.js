@@ -55,6 +55,14 @@ module.exports = function(grunt) {
         files: [
           { expand: true, cwd: 'Firefox/LiveReload', src: ['**.{json,js,html,png}'], dest: './' }
         ]
+      },
+      'firefox-src': {
+        options: {
+          archive: 'dist/<%= pkg.version %>/LiveReload-<%= pkg.version %>-Firefox.src.zip'
+        },
+        files: [
+          { expand: true, src: ['Firefox/**/*.{json}', 'src/**/*.{js,coffee}', '*.*'], dest: './' }
+        ]
       }
     }
   });
@@ -68,6 +76,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('chrome', ['browserify:chrome', 'compress:chrome']);
   grunt.registerTask('firefox', ['browserify:firefox', 'compress:firefox']);
-  grunt.registerTask('all', ['chrome', 'firefox']);
+  grunt.registerTask('firefox-src', ['compress:firefox-src']);
+  grunt.registerTask('all', ['chrome', 'firefox', 'firefox-src']);
 
 };

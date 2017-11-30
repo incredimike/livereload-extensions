@@ -25,7 +25,16 @@ node --eval "
 " "$version"
 rake version
 
+# Perform our bundling
+grunt all
+
 # Commit our release
+git add \
+  Chrome/LiveReload/manifest.json \
+  Firefox/LiveReload/manifest.json \
+  LiveReload.safariextension/Info.plist \
+  package.json \
+  src/common/version.coffee
 git commit -m "Release $version_tag"
 
 # Tag the release

@@ -16,6 +16,11 @@ We've consolidated the release process into a `release.sh` for ease of use
 # Runs a `git tag` and runs bundler
 ./release.sh {{version}}
 # Example: ./release 2.1.0
+
+# Navigate to addons.mozilla.org (AMO) and upload distribution and its source zip
+xdg-open https://addons.mozilla.org/en-US/developers/addon/livereload-web-extension/edit
+# Upload dist: `dist/{{version}}/LiveReload-{{version}}-Firefox.zip`
+# Upload dist-src: `dist/{{version}}/LiveReload-{{version}}-Firefox.src.zip`
 ```
 
 -----------
