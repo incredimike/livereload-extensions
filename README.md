@@ -1,6 +1,25 @@
 LiveReload Browser Extensions
 =============================
 
+This is a fork from [livereload/livereload-extensions][] caused by the release of Firefox Quantum which dropped support for the previous Firefox extension. This is an interim fork until the LiveReload maintainers pick up our changes
+
+[livereload/livereload-extensions]: https://github.com/livereload/livereload-extensions
+
+Below is the original README contents. Before that is some additional notes
+
+Firefox release process
+-----------------------
+We've consolidated the release process into a `release.sh` for ease of use
+
+```bash
+# Be sure to update CHANGELOG.md and run `git add -p`
+# Runs a `git tag` and runs bundler
+./release.sh {{version}}
+# Example: ./release 2.1.0
+```
+
+-----------
+
 Prerequsities:
 
 * Node.js (0.10.x or later) with npm
