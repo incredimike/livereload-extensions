@@ -379,8 +379,8 @@ browser.browserAction.onClicked.addListener(function(tab) {
   return ToggleCommand.update(tab.id);
 });
 
-browser.tabs.onActivated.addListener(function(tabId, selectInfo) {
-  return ToggleCommand.update(tabId);
+browser.tabs.onActivated.addListener(function(activeInfo) {
+  return ToggleCommand.update(activeInfo.tabId);
 });
 
 browser.tabs.onRemoved.addListener(function(tabId) {
