@@ -1,4 +1,6 @@
 # livereload-extensions changelog
+20.2.0 - Fixed `tabs.onActivated` parameters
+
 20.1.0 - Moved to colored icons via @REJack in #3
 
 20.0.0 - Firefox switched over to web extensions
