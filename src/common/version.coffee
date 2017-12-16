@@ -1,1 +1,1 @@
-module.exports = ExtVersion = '220.2.0'
+module.exports = ExtVersion = '20.2.0'

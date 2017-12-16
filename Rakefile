@@ -20,9 +20,9 @@ def subst_version_refs_in_file file, ver
     prev_line = ""
     anything_matched = false
     data = orig.lines.map do |line|
-        if line =~ /\d\.\d\.\d/ && (line =~ /version/i || prev_line =~ /CFBundleShortVersionString|CFBundleVersion/)
+        if line =~ /\d+\.\d+\.\d+/ && (line =~ /version/i || prev_line =~ /CFBundleShortVersionString|CFBundleVersion/)
             anything_matched = true
-            new_line = line.gsub /\d\.\d\.\d/, ver
+            new_line = line.gsub /\d+\.\d+\.\d+/, ver
             puts "    #{new_line.strip}"
         else
             new_line = line
