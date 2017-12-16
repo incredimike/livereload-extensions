@@ -367,6 +367,7 @@ ToggleCommand = {
 };
 
 browser.browserAction.onClicked.addListener(function(tab) {
+  console.log('wtf', tab.id);
   LiveReloadGlobal.toggle(tab.id);
   return ToggleCommand.update(tab.id);
 });
