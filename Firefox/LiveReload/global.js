@@ -348,21 +348,28 @@ ToggleCommand = {
   update: function(tabId) {
     var status;
     status = LiveReloadGlobal.tabStatus(tabId);
-    try {
-      browser.browserAction.setTitle({
-        tabId: tabId,
-        title: status.buttonToolTip
-      });
-      return browser.browserAction.setIcon({
-        tabId: tabId,
-        path: {
-          '19': status.buttonIcon,
-          '38': status.buttonIconHiRes
-        }
-      });
-    } catch (err) {
-      /* Ignore errors for now */
-    }
+    console.log('uhhh', {
+      tabId: tabId,
+      title: status.buttonToolTip
+    });
+    console.log('uhhh2', {
+      tabId: tabId,
+      path: {
+        '19': status.buttonIcon,
+        '38': status.buttonIconHiRes
+      }
+    });
+    browser.browserAction.setTitle({
+      tabId: tabId,
+      title: status.buttonToolTip
+    });
+    return browser.browserAction.setIcon({
+      tabId: tabId,
+      path: {
+        '19': status.buttonIcon,
+        '38': status.buttonIconHiRes
+      }
+    });
   }
 };
 
