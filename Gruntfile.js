@@ -53,7 +53,7 @@ module.exports = function(grunt) {
           archive: 'dist/<%= pkg.version %>/LiveReload-<%= pkg.version %>-Firefox.zip'
         },
         files: [
-          { expand: true, cwd: 'Firefox/LiveReload', src: ['**.{json,js,html,png}'], dest: './' }
+          { expand: true, cwd: 'Firefox/LiveReload', src: ['**.{json,js,html,png,svg}'], dest: './' }
         ]
       },
       'firefox-src': {
