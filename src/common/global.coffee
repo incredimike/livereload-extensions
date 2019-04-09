@@ -81,6 +81,7 @@ LiveReloadGlobal =
   initialize: ->
     @host = '127.0.0.1'
     @port = 35729
+    @proto = 'https'
     # @client = new LRClient
     #   host: @host
     #   port: @port
