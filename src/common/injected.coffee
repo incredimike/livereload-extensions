@@ -53,7 +53,7 @@ class LiveReloadInjected
       element.parentNode.removeChild(element) if element.parentNode
     callback()
 
-  doEnable: ({ useFallback, scriptURI, @host, @port })->
+  doEnable: ({ useFallback, scriptURI, @host, @port, @proto })->
     # our stuff isn't welcome in CKEditor's editing IFRAME :-)
     if @document.documentElement?.contentEditable is 'true'
       return
@@ -63,7 +63,7 @@ class LiveReloadInjected
       if @_verbose
         console.log "Loading LiveReload.js bundled with the browser extension..."
     else
-      url = "http://#{@host}:#{@port}/livereload.js?ext=#{@extName}&extver=#{ExtVersion}"
+      url = "#{@proto}://#{@host}:#{@port}/livereload.js?ext=#{@extName}&extver=#{ExtVersion}"
       if @_verbose
         console.log "Loading LiveReload.js from #{url.replace(/\?.*$/, '')}..."
 
